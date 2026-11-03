@@ -50,7 +50,7 @@ $ docker-compose run m1n1 make
 
 ## Usage
 <details>
-    <summary>View build instructions (OLD)</summary>
+    <summary>View usage instructions (OLD)</summary>
 
 Our [wiki](https://asahilinux.org/docs/sw/m1n1-user-guide/) has more information on how to
 use m1n1.
@@ -64,7 +64,7 @@ kmutil configure-boot -c m1n1.macho -v <path to your OS volume>
 ```
 </details>
 <details open>
-    <summary>View build instructions (Current)</summary>
+    <summary>View usage instructions (Current)</summary>
 
 To install on an OS container based on macOS >=12.1, use `m1n1.bin`.
 
