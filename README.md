@@ -1,7 +1,7 @@
 # m1n1: A bootloader and experimentation playground for Apple Silicon
 
 > [!WARNING]
-> This m1n1 fork is designed specifically to run our MU payloads, linux support is basically 0, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for linux support.
+> This m1n1 fork is designed specifically to run our MU payloads, linux support is basically nonexistant, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for linux support.
 
 ## Building
 
