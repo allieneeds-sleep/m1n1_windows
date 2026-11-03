@@ -1,5 +1,8 @@
 # m1n1: A bootloader and experimentation playground for Apple Silicon
 
+> [!WARNING]
+> This m1n1 fork is designed specifically to run our MU payloads, linux support is basically 0, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for linux support.
+
 ## Building
 
 You need an `aarch64-linux-gnu-gcc` cross-compiler toolchain (or a native one, if running on ARM64).
@@ -29,7 +32,7 @@ $ sudo port select llvm llvm-mp-<version>
 $ make
 ```
 
-The output will be in `build/m1n1.macho`.
+The output will be in `build/m1n1.macho` or `build/m1n1.bin`.
 
 To build verbosely, use `make V=1`.
 
@@ -46,42 +49,44 @@ $ docker-compose run m1n1 make
 ```
 
 ## Usage
+<details>
+    <summary>View build instructions (OLD)</summary>
 
 Our [wiki](https://asahilinux.org/docs/sw/m1n1-user-guide/) has more information on how to
 use m1n1.
 
 To install on an OS container based on macOS <12.1, use `m1n1.macho`:
 
+
+Run this command in 1TR
 ```shell
 kmutil configure-boot -c m1n1.macho -v <path to your OS volume>
 ```
+</details>
+<details open>
+    <summary>View build instructions (Current)</summary>
 
-To install on an OS container based on macOS >=12.1, use `m1n1.bin`:
+To install on an OS container based on macOS >=12.1, use `m1n1.bin`.
 
+Run this command in 1TR:
 ```shell
 kmutil configure-boot -c m1n1.bin --raw --entry-point 2048 --lowest-virtual-address 0 -v <path to your OS volume>
 ```
+</details>
 
 ## Payloads
 
 m1n1 supports running payloads by simple concatenation:
 
 ```shell
-$ cat build/m1n1.macho Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.macho
-$ cat build/m1n1.bin Image.gz build/dtb/apple-j274.dtb initramfs.cpio.gz > m1n1-payload.bin
+$ cat build/m1n1.macho build/dtb/apple-j274.dtb J274MACMINI2020_EFI.fd > m1n1-payload.macho
+$ cat build/m1n1.bin build/dtb/apple-j274.dtb J274MACMINI2020_EFI.fd > m1n1-payload.bin
 ```
 
 Supported payload file formats:
 
-* Kernel images (or compatible). Must be compressed or last payload.
+* Built MU  (or compatible). Must be compressed or last payload.
 * Devicetree blobs (FDT). May be uncompressed or compressed.
-* Initramfs cpio images. Must be compressed.
-
-Supported compression formats:
-
-* gzip
-* xz
-
 ## License
 
 m1n1 is licensed under the MIT license, as included in the [LICENSE](LICENSE) file.
