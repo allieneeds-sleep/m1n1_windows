@@ -85,7 +85,7 @@ $ cat build/m1n1.bin build/dtb/apple-j274.dtb J274MACMINI2020_EFI.fd > m1n1-payl
 
 Supported payload file formats:
 
-* Built MU  (or compatible). Must be compressed or last payload.
+* Built MU FD (or compatible). Must be last payload.
 * Devicetree blobs (FDT). May be uncompressed or compressed.
 ## License
 
