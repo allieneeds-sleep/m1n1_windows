@@ -1,4 +1,4 @@
-# m1n1: A bootloader and experimentation playground for Apple Silicon
+# m1n1_windows: A bootloader and experimentation playground for Apple Silicon
 
 > [!WARNING]
 > This m1n1 fork is designed specifically to run our MU payloads, linux support is basically nonexistant, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for linux support.
@@ -13,8 +13,8 @@ $ rustup target add aarch64-unknown-none-softfloat
 ```
 
 ```shell
-$ git clone --recursive https://github.com/AsahiLinux/m1n1.git
-$ cd m1n1
+$ git clone --recursive https://github.com/NT-for-ASi/m1n1_windows.git
+$ cd m1n1_windows
 $ make
 ```
 
