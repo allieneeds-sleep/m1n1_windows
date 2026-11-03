@@ -1,7 +1,7 @@
 # m1n1_windows: A bootloader and experimentation playground for Apple Silicon
 
 > [!WARNING]
-> This m1n1 fork is designed specifically to run our MU payloads, linux support is basically nonexistant, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for linux support.
+> This m1n1 fork is designed specifically to run our MU payloads for windows, Linux support is basically nonexistent, please use the [official m1n1 repo](https://github.com/AsahiLinux/m1n1) for Linux support.
 
 ## Building
 
@@ -50,7 +50,7 @@ $ docker-compose run m1n1 make
 
 ## Usage
 <details>
-    <summary>View usage instructions (OLD)</summary>
+    <summary><b>View usage instructions (OLD)</b></summary>
 
 Our [wiki](https://asahilinux.org/docs/sw/m1n1-user-guide/) has more information on how to
 use m1n1.
@@ -64,7 +64,7 @@ kmutil configure-boot -c m1n1.macho -v <path to your OS volume>
 ```
 </details>
 <details open>
-    <summary>View usage instructions (Current)</summary>
+    <summary><b>View usage instructions (Current)</b></summary>
 
 To install on an OS container based on macOS >=12.1, use `m1n1.bin`.
 
